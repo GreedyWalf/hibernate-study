@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.qs.entity.Address" table="t_address">
+        <id name="addressId" type="java.lang.String" column="address_id">
+            <generator class="uuid"/>
+        </id>
+
+        <property name="addressName" type="java.lang.String" column="address_name" length="2000" not-null="true" />
+
+        <one-to-one name="account" property-ref="address"></one-to-one>
+    </class>
+</hibernate-mapping>

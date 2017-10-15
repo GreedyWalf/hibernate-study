@@ -17,7 +17,7 @@ public class Account implements Serializable {
 
     private String email;
 
-    private String address;
+    private Address address;
 
 
     public String getAccountId() {
@@ -76,11 +76,11 @@ public class Account implements Serializable {
         this.email = email;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }

@@ -1,11 +1,8 @@
-package com.testServiceImpl;
+package com.test;
 
 import com.qs.entity.Account;
 import com.qs.service.AccountService;
 import com.qs.service.impl.AccountServiceImpl;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.Test;
@@ -34,7 +31,6 @@ public class TestAccountServiceImpl {
         account.setAccountId("111111");
         account.setAccountName("zhangsan");
         account.setPassword("123");
-        account.setAddress("这个是地址");
         account.setAge(20);
         account.setEmail("695830237@qq.com");
         account.setSex("男");
