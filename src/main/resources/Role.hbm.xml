@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.qs.entity.Role" table="t_role">
+        <id name="roleId" type="java.lang.String" column="role_id">
+            <generator class="uuid"/>
+        </id>
+
+        <property name="roleName" type="java.lang.String" column="role_name" length="50" not-null="true"/>
+
+        <!-- 使用set标签映射多对多关系（一个角色可以有多个用户），cascade属性设置是否级联删除、更新 -->
+        <set name="accounts" table="t_account_role" cascade="all" inverse="true">
+            <key column="role_id" />
+            <many-to-many column="account_id" class="com.qs.entity.Account" />
+        </set>
+    </class>
+</hibernate-mapping>

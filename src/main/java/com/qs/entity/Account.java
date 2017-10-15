@@ -1,6 +1,9 @@
 package com.qs.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Account implements Serializable {
     private String accountId;
@@ -17,8 +20,13 @@ public class Account implements Serializable {
 
     private String email;
 
+    /* account和address一对一关系 */
     private Address address;
 
+    /**
+     *  account和role之间为多对多关系，在account表中维护roles集合
+     */
+    private Set<Role> roles = new HashSet<Role>();
 
     public String getAccountId() {
         return accountId;
@@ -82,6 +90,14 @@ public class Account implements Serializable {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
 

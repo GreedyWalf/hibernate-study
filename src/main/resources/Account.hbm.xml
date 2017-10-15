@@ -33,5 +33,11 @@
 
         <!-- 通过many-to-one标签添加唯一属性约束，建立一对一关联关系 -->
         <many-to-one name="address" column="address_id" unique="true"/>
+
+        <!-- 使用set标签映射多对多关系（一个用户可以有多种角色），cascade属性设置是否级联删除、更新 -->
+        <set name="roles" table="t_account_role" cascade="all">
+            <key column="account_id" />
+            <many-to-many column="role_id" class="com.qs.entity.Role" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -25,5 +25,6 @@
         <!-- 映射文件 -->
         <mapping resource="Account.hbm.xml" />
         <mapping resource="Address.hbm.xml" />
+        <mapping resource="Role.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
