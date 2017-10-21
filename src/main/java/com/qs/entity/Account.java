@@ -17,7 +17,11 @@ public class Account implements Serializable {
 
     private String email;
 
+    /* t_address 一对一 */
     private Address address;
+
+    /* t_department 多对一 */
+    private Department department;
 
 
     public String getAccountId() {
@@ -82,6 +86,14 @@ public class Account implements Serializable {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
 

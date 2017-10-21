@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.qs.entity.Department" table="t_department">
+        <id name="departmentId" type="java.lang.String" column="department_id">
+            <!--generator的class类型
+                assigned:主键的状态 assigned表示程序生成
+                sequence：Oracle中的序列
+                identity：Sql中的自动编号
+                increment：先查询最大的编号再增1
+                uuid：生成32位长的字符串
+                native：根据数据库自动生成
+             -->
+            <generator class="uuid"/>
+        </id>
+
+        <!-- 直接使用property属性设置 -->
+        <property name="departmentName" type="java.lang.String" column="department_name" length="50" not-null="true" />
+
+        <!-- department对应多个account（一对多） -->
+        <set name="users" table="t_account" cascade="all">
+            <key column="department_id"></key>
+            <one-to-many class="com.qs.entity.Account"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -33,5 +33,6 @@
 
         <!-- 通过many-to-one标签添加唯一属性约束，建立一对一关联关系 -->
         <many-to-one name="address" column="address_id" unique="true"/>
+       <!-- <many-to-one name="department" column="department_id"/>-->
     </class>
 </hibernate-mapping>
