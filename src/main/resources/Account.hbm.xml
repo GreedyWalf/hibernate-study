@@ -33,6 +33,7 @@
 
         <!-- 通过many-to-one标签添加唯一属性约束，建立一对一关联关系 -->
         <many-to-one name="address" column="address_id" unique="true"/>
-       <!-- <many-to-one name="department" column="department_id"/>-->
+        <!-- 在account中维护department_id字段，多对一 -->
+        <many-to-one name="department" column="department_id" lazy="false"/>
     </class>
 </hibernate-mapping>

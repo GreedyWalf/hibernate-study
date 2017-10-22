@@ -20,9 +20,9 @@
         <property name="departmentName" type="java.lang.String" column="department_name" length="50" not-null="true" />
 
         <!-- department对应多个account（一对多） -->
-        <set name="users" table="t_account" cascade="all">
+        <!--<set name="users" table="t_account" cascade="all">
             <key column="department_id"></key>
             <one-to-many class="com.qs.entity.Account"/>
-        </set>
+        </set>-->
     </class>
 </hibernate-mapping>
